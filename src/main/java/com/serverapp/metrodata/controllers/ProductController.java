@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.serverapp.metrodata.models.Product;
+import com.serverapp.metrodata.models.dto.request.ProductRequest;
 import com.serverapp.metrodata.services.ProductService;
 
 import lombok.AllArgsConstructor;
@@ -33,8 +34,8 @@ public class ProductController {
     }
 
     @PostMapping
-    public Product create(@RequestBody Product product) {
-        return productService.create(product);
+    public Product create(@RequestBody ProductRequest productRequest) {
+        return productService.create(productRequest);
     }
 
     @PutMapping("/{id}")
